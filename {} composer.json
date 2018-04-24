@@ -1,0 +1,14 @@
+{
+    "name": "aikibo/stok-app",
+    "type": "project",
+    "authors" : [
+        {
+            "name": "fifi",
+            "email": "fifidwi14@gmail.com",
+            "role": "programmer"
+        }
+    ],
+    "require":{
+        "phpunit/phpunit":"^6.5"
+    }
+}
