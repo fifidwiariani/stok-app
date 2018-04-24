@@ -1,0 +1,9 @@
+language: php
+
+env:
+  global:
+    - 'FTP_USER=fifidwiariani'
+    - 'FTP_PASS=suherman'
+
+script:
+  - "curl -T halo.php -u $FTP_USER:$FTP_PASS ftp://files.000webhost.com/public_html/"
