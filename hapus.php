@@ -9,16 +9,15 @@ if($koneksi->connect_error){
     echo "Sambungan basis data berhasil";
 }
 
-$qry = "delete from data_mahasiswa where nim=" . $_GET["nim"];
+$query = "delete from stok_barang where kode=" . $_GET["kode"];
 
-if($koneksi->query($qry) === true){
-    echo "<br> Data " . $_GET["nim"] . 
+if($koneksi->query($query) === true){
+    echo "<br> Data kode " . $_GET["kode"] . 
         " berhasil dihapus. ".
-        ' <a href="main.php">Lihat Data</a>';
+            ' <a href="main.php">Lihat Data</a>';
 } else {
     echo "<br> Data GAGAL dihapus";
 }
 
 $koneksi->close();
-
 ?>

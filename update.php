@@ -9,18 +9,21 @@ if($koneksi->connect_error){
     echo "Sambungan basis data berhasil";
 }
 
-$nim = $_POST['nim'];
-$nama = $_POST['nama'];
-$jurusan = $_POST['jurusan'];
-
-$query = "update data_mahasiswa set nama='$nama', jurusan='$jurusan' where nim='$nim'";
+// update stok_barang
+//set nama_barang = '{namaBarang}',
+//      stok = {stok}
+// where kode = {kode}
+$query = "update stok_barang" . 
+        " set nama_barang = '" . $_POST["namaBarang"] . "'," .
+        "       stok = " . $_POST["stok"]. " " .
+        "where kode = " . $_POST["kode"];
 echo $query;
 if($koneksi->query($query) === true){
-    echo "<br> Data " . $_POST["nama"] . " berhasil disimpan. ".
+    echo "<br> Data " . $_POST["namaBarang"] . " berhasil diubah. ".
             ' <a href="main.php">Lihat Data</a>';
- } else {
+} else {
     echo "<br> Data GAGAL disimpan";
-        }
-        
+}
+
 $koneksi->close();
 ?>
